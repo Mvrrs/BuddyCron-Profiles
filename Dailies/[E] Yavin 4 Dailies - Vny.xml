@@ -1,0 +1,368 @@
+<Profile>
+	<!-- Made by Vny with the help of Quest Recorder 1.0.0.7 - LethToxic. Recording: Yavin 4 -->
+	<Name>[E] Yavin 4 Dailies - Vny</Name>
+
+	<Questing>
+		<!-- Pick up [DAILY] Confederacy -->
+		<If Condition="(not HasQuest(0xE0004A2829872B16)) and (not IsQuestComplete(0xE0004A2829872B16))">
+			<PickUpQuest QuestName="[DAILY] Confederacy" QuestId="0xE0004A2829872B16" SearchRadius="20" UseRange="20" GiverName="Mission Terminal" XYZ="344.964,40.15,14.503" />
+		</If>
+		<!-- Pick up [DAILY] The Devoted Ones -->
+		<If Condition="(not HasQuest(0xE0000FF1639BC9A1)) and (not IsQuestComplete(0xE0000FF1639BC9A1))">
+			<PickUpQuest QuestName="[DAILY] The Devoted Ones" QuestId="0xE0000FF1639BC9A1" SearchRadius="20" UseRange="20" GiverName="Mission Terminal" XYZ="344.964,40.15,14.503" />
+		</If>
+		<!-- Pick up [WEEKLY] Daily Area: Yavin 4 -->
+		<If Condition="(not HasQuest(0xE00029D46BB4EA8D))">
+			<PickUpQuest QuestName="[WEEKLY] Daily Area: Yavin 4" QuestId="0xE00029D46BB4EA8D" SearchRadius="20" UseRange="10" GiverName="Mission Terminal" XYZ="344.964,40.15,14.503" />
+		</If>
+		<!-- Pick up [DAILY] Chopping Block -->
+		<If Condition="(not HasQuest(0xE0007EC3F5A3CF10)) and (not IsQuestComplete(0xE0007EC3F5A3CF10))">
+		    <TalkTo QuestId="1" Name="Lord Ray'en" XYZ="342.1049, 40.191628, 16.0273" />
+			<PickUpQuest QuestName="[DAILY] Chopping Block" QuestId="0xE0007EC3F5A3CF10" SearchRadius="20" UseRange="10" GiverName="Lord Ray'en" XYZ="342.1049,40.19028,16.0273" />
+		</If>
+		<!-- Pick up [DAILY] Pushback -->
+		<If Condition="(not HasQuest(0xE00074C9A6567C0F)) and (not IsQuestComplete(0xE00074C9A6567C0F))">
+			<TalkTo QuestId="1" Name="Sergeant Sager" XYZ="340.4663, 39.93107, 14.2955" />
+			<PickUpQuest QuestName="[DAILY] Pushback" QuestId="0xE00074C9A6567C0F" SearchRadius="20" UseRange="10" GiverName="Sergeant Sager" XYZ="340.4663, 39.93107, 14.2955" />
+		</If>
+		<!-- Pick up [DAILY] Altars of History -->
+		<If Condition="(not HasQuest(0xE0008015AD0AF9C8)) and (not IsQuestComplete(0xE0008015AD0AF9C8))">
+			<TalkTo QuestId="1" Name="Lieutenant Sabri" XYZ="342.1897, 39.810295, 11.2921" />
+			<PickUpQuest QuestName="[DAILY] Altars of History" QuestId="0xE0008015AD0AF9C8" SearchRadius="20" UseRange="10" GiverName="Lieutenant Sabri" XYZ="342.1897, 39.810295, 11.2921" />
+		</If>
+		<!-- Pick up [DAILY] Training Regimen -->
+		<If Condition="(not HasQuest(0xE000AE0639786886)) and (not IsQuestComplete(0xE000AE0639786886))">
+			<TalkTo QuestId="1" Name="Colonel Burr" XYZ="338.6, 39.8319, 13.6" />
+			<PickUpQuest QuestName="[DAILY] Training Regimen" QuestId="0xE000AE0639786886" SearchRadius="20" UseRange="10" GiverName="Colonel Burr" XYZ="338.6, 39.8319, 13.6" />
+		</If>
+		<!-- [DAILY] Confederacy: Plant Perimeter Sensors (1/6) -->
+		<If Condition="HasQuest(0xE0004A2829872B16) and not IsTaskValueGreaterThan(0xE0004A2829872B16, 2, 0, 0)">
+			<UseObject ObjectName="Perimeter Sensor Base" QuestId="0xE0004A2829872B16" BranchId="1" StepId="2" TaskId="0" TaskValue="0" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="267.78,15.45,22.066" />
+		</If>
+		<!-- [DAILY] Confederacy: Plant Perimeter Sensors (2/6) -->
+		<If Condition="HasQuest(0xE0004A2829872B16) and not IsTaskValueGreaterThan(0xE0004A2829872B16, 2, 0, 1)">
+			<UseObject ObjectName="Perimeter Sensor Base" QuestId="0xE0004A2829872B16" BranchId="1" StepId="2" TaskId="0" TaskValue="1" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="270.239,15.464,33.778" />
+		</If>
+		<!-- [DAILY] Confederacy: Plant Perimeter Sensors (3/6) -->
+		<If Condition="HasQuest(0xE0004A2829872B16) and not IsTaskValueGreaterThan(0xE0004A2829872B16, 2, 0, 2)">
+			<UseObject ObjectName="Perimeter Sensor Base" QuestId="0xE0004A2829872B16" BranchId="1" StepId="2" TaskId="0" TaskValue="2" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="282.373,15.452,39.974" />
+		</If>
+		<!-- [DAILY] Confederacy: Plant Perimeter Sensors (4/6) -->
+		<If Condition="HasQuest(0xE0004A2829872B16) and not IsTaskValueGreaterThan(0xE0004A2829872B16, 2, 0, 3)">
+			<UseObject ObjectName="Perimeter Sensor Base" QuestId="0xE0004A2829872B16" BranchId="1" StepId="2" TaskId="0" TaskValue="3" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="272.364,9.929,86.042" />
+		</If>
+		<!-- [DAILY] Confederacy: Plant Perimeter Sensors (5/6) -->
+		<If Condition="HasQuest(0xE0004A2829872B16) and not IsTaskValueGreaterThan(0xE0004A2829872B16, 2, 0, 4)">
+			<UseObject ObjectName="Perimeter Sensor Base" QuestId="0xE0004A2829872B16" BranchId="1" StepId="2" TaskId="0" TaskValue="4" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="283.001,10.055,82.623" />
+		</If>
+		<!-- [DAILY] Confederacy: step 2 done (next: Return to the Mission Dropbox) -->
+		<If Condition="HasQuest(0xE0004A2829872B16) and not IsBranchStepComplete(0xE0004A2829872B16, 1, 2)">
+			<UseObject ObjectName="Perimeter Sensor Base" QuestId="0xE0004A2829872B16" BranchId="1" StepId="2" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="272.588,9.834,108.95" />
+		</If>
+		<!-- Reward: [DAILY] Confederacy -->
+		<If Condition="HasQuest(0xE0004A2829872B16) and not IsQuestComplete(0xE0004A2829872B16)">
+			<WaitTimer QuestId="1" WaitTime="5" />
+			<CompleteQuest QuestId="0xE0004A2829872B16" />
+		</If>
+		<!-- [DAILY] Pushback: Lurker Mass Kill Patrol (Step 2 - Mass Kills) -->
+		<If Condition="HasQuest(0xE00074C9A6567C0F) and not IsTaskValueGreaterThan(0xE00074C9A6567C0F, 2, 0, 9)">
+			<Grind While="HasQuest(0xE00074C9A6567C0F) and not IsTaskValueGreaterThan(0xE00074C9A6567C0F, 2, 0, 9)">
+				<GrindArea Name="Pushback: Lurker Camp Patrol">
+					<MinLevel>1</MinLevel>
+					<MaxLevel>100</MaxLevel>
+					<Mobs>
+						<Mob>Lurker</Mob>
+					</Mobs>
+					<Hotspots>
+						<Hotspot Name="Lurker Group" XYZ="251.678,11.957,90.966" />
+						<Hotspot Name="Lurker Group" XYZ="247.851,13.029,83.787" />
+						<Hotspot Name="Lurker Group" XYZ="248.305,13.021,64.665" />
+						<Hotspot Name="Lurker Group" XYZ="237.412,13.157,41.742" />
+						<Hotspot Name="Lurker Group" XYZ="247.278,13.315,40.365" />
+						<Hotspot Name="Lurker Group" XYZ="249.698,13.492,46.601" />
+					</Hotspots>
+				</GrindArea>
+			</Grind>
+		</If>
+		<!-- [DAILY] Pushback: step 3 done (next: Return to Sergeant Sager) -->
+		<If Condition="HasQuest(0xE00074C9A6567C0F) and not IsBranchStepComplete(0xE00074C9A6567C0F, 1, 3)">
+			<UseObject ObjectName="Pile of Bones" QuestId="0xE00074C9A6567C0F" BranchId="1" StepId="3" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="271.182,12.61,59.017" />
+			<Grind While="HasQuest(0xE00074C9A6567C0F) and not IsBranchStepComplete(0xE00074C9A6567C0F, 1, 3)">
+				<GrindArea Name="[DAILY] Pushback: step 3 done (next: Return to Sergeant Sager)">
+					<MinLevel>1</MinLevel>
+					<MaxLevel>100</MaxLevel>
+					<Mobs><Mob>Elder Lurker</Mob></Mobs>
+					<Hotspots>
+						<Hotspot Name="Elder Lurker" XYZ="270.757,12.647,57.413" />
+					</Hotspots>
+				</GrindArea>
+			</Grind>
+		</If>
+		
+		<!-- [DAILY] Training Regimen: Console Stations Sequence (Step 2) -->
+		<If Condition="HasQuest(0xE000AE0639786886) and not IsBranchStepComplete(0xE000AE0639786886, 1, 2)">
+
+			<!-- === CONSOLE STATION 1 === -->
+			<If Condition="HasQuest(0xE000AE0639786886) and not IsBranchStepComplete(0xE000AE0639786886, 1, 2)">
+				<UseObject ObjectName="Guard Console" QuestId="0xE000AE0639786886" BranchId="1" StepId="2" UseRange="10" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="60" XYZ="237.936,13.491,57.827" />
+				<Grind While="HasQuest(0xE000AE0639786886) and not IsBranchStepComplete(0xE000AE0639786886, 1, 2) and (Ingame.GetNearestMob('Intermediate Training Droid') != null or Ingame.GetNearestMob('Advanced Training Droid') != null)">
+					<GrindArea Name="Clear Spawned Droids - Station 1">
+			        <MinLevel>1</MinLevel>
+			        <MaxLevel>100</MaxLevel>
+						<Mobs><Mob>Intermediate Training Droid</Mob><Mob>Advanced Training Droid</Mob></Mobs>
+						<Hotspots><Hotspot Name="Defend Console 1" XYZ="237.936,13.491,57.827" /></Hotspots>
+					</GrindArea>
+				</Grind>
+			</If>
+
+			<!-- === CONSOLE STATION 2 === -->
+			<If Condition="HasQuest(0xE000AE0639786886) and not IsBranchStepComplete(0xE000AE0639786886, 1, 2)">
+				<UseObject ObjectName="Guard Console" QuestId="0xE000AE0639786886" BranchId="1" StepId="2" UseRange="10" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="60" XYZ="222.389,13.493,51.967" />
+				<Grind While="HasQuest(0xE000AE0639786886) and not IsBranchStepComplete(0xE000AE0639786886, 1, 2) and (Ingame.GetNearestMob('Intermediate Training Droid') != null or Ingame.GetNearestMob('Advanced Training Droid') != null)">
+					<GrindArea Name="Clear Spawned Droids - Station 2">
+			        <MinLevel>1</MinLevel>
+			        <MaxLevel>100</MaxLevel>
+						<Mobs><Mob>Intermediate Training Droid</Mob><Mob>Advanced Training Droid</Mob></Mobs>
+						<Hotspots><Hotspot Name="Defend Console 2" XYZ="222.389,13.493,51.967" /></Hotspots>
+					</GrindArea>
+				</Grind>
+			</If>
+
+			<!-- === CONSOLE STATION 3 === -->
+			<If Condition="HasQuest(0xE000AE0639786886) and not IsBranchStepComplete(0xE000AE0639786886, 1, 2)">
+				<UseObject ObjectName="Guard Console" QuestId="0xE000AE0639786886" BranchId="1" StepId="2" UseRange="10" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="60" XYZ="218.443,13.498,55.959" />
+				<Grind While="HasQuest(0xE000AE0639786886) and not IsBranchStepComplete(0xE000AE0639786886, 1, 2) and (Ingame.GetNearestMob('Intermediate Training Droid') != null or Ingame.GetNearestMob('Advanced Training Droid') != null)">
+					<GrindArea Name="Clear Spawned Droids - Station 3">
+			        <MinLevel>1</MinLevel>
+			        <MaxLevel>100</MaxLevel>
+						<Mobs><Mob>Intermediate Training Droid</Mob><Mob>Advanced Training Droid</Mob></Mobs>
+						<Hotspots><Hotspot Name="Defend Console 3" XYZ="218.443,13.498,55.959" /></Hotspots>
+					</GrindArea>
+				</Grind>
+			</If>
+		</If>
+
+
+        <!-- [DAILY] The Devoted Ones: Universal Kill & Patrol Loop -->
+        <If Condition="HasQuest(0xE0000FF1639BC9A1) and (not IsTaskValueGreaterThan(0xE0000FF1639BC9A1, 2, 0, 2) or not IsTaskValueGreaterThan(0xE0000FF1639BC9A1, 2, 1, 4) or not IsTaskValueGreaterThan(0xE0000FF1639BC9A1, 2, 2, 19))">
+        	<Grind While="HasQuest(0xE0000FF1639BC9A1) and (not IsTaskValueGreaterThan(0xE0000FF1639BC9A1, 2, 0, 2) or not IsTaskValueGreaterThan(0xE0000FF1639BC9A1, 2, 1, 4) or not IsTaskValueGreaterThan(0xE0000FF1639BC9A1, 2, 2, 19))">
+    		<GrindArea Name="The Devoted Ones: Full Camp Patrol">
+			<MinLevel>1</MinLevel>
+			<MaxLevel>100</MaxLevel>
+			<Mobs>
+				<Mob>Revanite Overseer</Mob>
+				<Mob>Revanite Loyalist</Mob>
+				<Mob>Revanite Partisan</Mob>
+				<Mob>Revanite Follower</Mob>
+			</Mobs>
+			<Hotspots>
+				<!-- === OVERSEER SPOTS === -->
+				<Hotspot Name="Overseer" XYZ="237.619,13.643,60.138" />
+				<Hotspot Name="Overseer" XYZ="226.546,14.238,77.893" />
+				<Hotspot Name="Overseer" XYZ="221.722,14.236,62.117" />
+				<Hotspot Name="Overseer" XYZ="214.729,13.942,65.119" />
+				<Hotspot Name="Overseer" XYZ="218.437,13.495,79.150" />
+				<Hotspot Name="Overseer" XYZ="225.367,14.237,76.705" />
+
+				<!-- === LOYALIST SPOTS === -->
+				<Hotspot Name="Loyalist" XYZ="239.923,13.945,63.182" />
+				<Hotspot Name="Loyalist" XYZ="235.785,14.239,72.349" />
+				<Hotspot Name="Loyalist" XYZ="239.405,13.643,76.861" />
+				<Hotspot Name="Loyalist" XYZ="229.794,14.238,78.291" />
+				<Hotspot Name="Loyalist" XYZ="228.412,13.947,82.253" />
+				<Hotspot Name="Loyalist" XYZ="215.915,13.655,81.997" />
+				<Hotspot Name="Loyalist" XYZ="230.484,14.237,77.326" />
+
+				<!-- === PARTISAN & FOLLOWER SPOTS === -->
+				<Hotspot Name="Follower" XYZ="239.423,13.944,63.673" />
+				<Hotspot Name="Follower" XYZ="235.456,14.243,71.848" />
+				<Hotspot Name="Partisan" XYZ="236.147,14.243,72.064" />
+				<Hotspot Name="Follower" XYZ="238.686,13.643,77.081" />
+				<Hotspot Name="Partisan" XYZ="230.884,14.238,76.797" />
+				<Hotspot Name="Follower" XYZ="221.694,14.243,72.674" />
+				<Hotspot Name="Follower" XYZ="221.433,14.243,72.441" />
+				<Hotspot Name="Partisan" XYZ="227.918,13.947,82.73" />
+				<Hotspot Name="Partisan" XYZ="221.389,14.243,71.936" />
+				<Hotspot Name="Partisan" XYZ="222.464,13.576,81.826" />
+			</Hotspots>
+    		</GrindArea>
+    	    </Grind>
+        </If>
+
+		<!-- [DAILY] The Devoted Ones: step 3 done (next: Return to the Mission Dropbox) -->
+		<If Condition="HasQuest(0xE0000FF1639BC9A1) and not IsBranchStepComplete(0xE0000FF1639BC9A1, 1, 3)">
+			<UseObject ObjectName="Revanite Altar" QuestId="0xE0000FF1639BC9A1" BranchId="1" StepId="3" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="222.459,13.497,82.914" />
+			<Grind While="HasQuest(0xE0000FF1639BC9A1) and not IsBranchStepComplete(0xE0000FF1639BC9A1, 1, 3)">
+				<GrindArea Name="[DAILY] The Devoted Ones: step 3 done (next: Return to the Mission Dropbox)">
+					<MinLevel>1</MinLevel>
+					<MaxLevel>100</MaxLevel>
+					<Mobs><Mob>Lord Darkspanner</Mob></Mobs>
+					<Hotspots>
+						<Hotspot Name="Lord Darkspanner" XYZ="221.962,13.495,83.054" />
+					</Hotspots>
+				</GrindArea>
+			</Grind>
+		</If>
+		<!-- Reward: [DAILY] The Devoted Ones -->
+		<If Condition="HasQuest(0xE0000FF1639BC9A1) and not IsQuestComplete(0xE0000FF1639BC9A1)">
+			<WaitTimer QuestId="1" WaitTime="5" />
+			<CompleteQuest QuestId="0xE0000FF1639BC9A1" />
+		</If>
+		<!-- [DAILY] Chopping Block: step 2 done (next: Destroy the Power Panel and Defeat the Revanite Commanders) -->
+		<If Condition="HasQuest(0xE0007EC3F5A3CF10) and not IsBranchStepComplete(0xE0007EC3F5A3CF10, 1, 2)">
+			<MoveTo QuestId="1" XYZ="223.6447,13.64251,92.85917" />
+		<!--<UseItem QuestId="0xE0007EC3F5A3CF10" Item="Scanner" WaitTime="3500" Range="4" InCombat="False" BranchId="1" StepId="2" Radius="200" X="223.6447" Y="13.64251" Z="92.85917" />-->
+			<UserDialog Title="IMPORTANT" Message="Please use the scanner to complete mission '[DAILY] Chopping Block' and click Continue Profile on this window." />
+		</If>
+		<!-- [DAILY] Chopping Block: step 3 done (next: Return to Lord Ray'en) -->
+		<If Condition="HasQuest(0xE0007EC3F5A3CF10) and not IsBranchStepComplete(0xE0007EC3F5A3CF10, 1, 3)">
+			<MoveTo QuestId="1" Name="Stand for Power Panel" XYZ="223.467,13.748,97.105" />
+			<UseObject ObjectName="Power Panel" QuestId="0xE0007EC3F5A3CF10" BranchId="1" StepId="3" UseRange="68" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="223.554,15.796,102.434" />
+			<Grind While="HasQuest(0xE0007EC3F5A3CF10) and not IsBranchStepComplete(0xE0007EC3F5A3CF10, 1, 3)">
+				<GrindArea Name="[DAILY] Chopping Block: step 3 done (next: Return to Lord Ray'en)">
+					<MinLevel>1</MinLevel>
+					<MaxLevel>100</MaxLevel>
+					<Mobs><Mob>Revanite Commander</Mob></Mobs>
+					<Hotspots>
+						<Hotspot Name="Revanite Commander" XYZ="223.521,13.755,97.307" />
+					</Hotspots>
+				</GrindArea>
+			</Grind>
+		</If>
+		<!-- Pick up [DAILY] Hunters Hunted -->
+		<If Condition="(not HasQuest(0xE000D0A60DF8B9CA)) and (not IsQuestComplete(0xE000D0A60DF8B9CA))">
+			<PickUpQuest QuestName="[DAILY] Hunters Hunted" QuestId="0xE000D0A60DF8B9CA" Type="Placeable" SearchRadius="20" UseRange="5" GiverName="Datapad" XYZ="188.2659,11.7476,75.5593" />
+		</If>
+		<!-- [DAILY] Hunters Hunted: Rescue Republic Scouts -->
+		<If Condition="((HasQuest(0xE000D0A60DF8B9CA)) and (not IsQuestComplete(0xE000D0A60DF8B9CA)))">
+		  <If Condition="((HasQuest(0xE000D0A60DF8B9CA)) and (not IsBranchStepComplete(0xE000D0A60DF8B9CA, 1, 2)))">
+			<UseObject QuestId="0xE000D0A60DF8B9CA" ObjectName="Massassi Cage" BranchId="1" StepId="2" Radius="20" WaitTime="5" >
+			  <Hotspots>
+			  <Hotspot Name="Massassi Cage" XYZ="188.55536,12.2894,54.40142" />
+			  <Hotspot Name="Massassi Cage" XYZ="185.72102,12.1621,54.935997" />
+			  <Hotspot Name="Massassi Cage" XYZ="183.2957,12.3059,52.74097" />
+			  <Hotspot Name="Massassi Cage" XYZ="180.15942,12.548,55.560318" />
+			  <Hotspot Name="Massassi Cage" XYZ="179.72035,12.5655,58.64697" />
+			  <Hotspot Name="Massassi Cage" XYZ="181.9449,12.0023,60.53352" />
+			  <Hotspot Name="Massassi Cage" XYZ="187.09499,12.2423,58.087334" />
+			  <Hotspot Name="Massassi Cage" XYZ="184.81424,11.885,60.0944" />
+			  <Hotspot Name="Massassi Cage" XYZ="187.53188,11.9133,62.787342" />
+			  <Hotspot Name="Massassi Cage" XYZ="184.68472,11.9039,64.379196" />
+			  </Hotspots>
+			</UseObject>
+		  </If>
+		</If>
+		<!--[DAILY] Altars of History-->
+		<If Condition="((HasQuest(0xE0008015AD0AF9C8)) and (not IsQuestComplete(0xE0008015AD0AF9C8)))">
+		 <If Condition="((HasQuest(0xE0008015AD0AF9C8)) and (not IsBranchStepComplete(0xE0008015AD0AF9C8, 1, 2)))">					
+			<UseObject QuestId="0xE0008015AD0AF9C8" ObjectName="Altar" BranchId="1" StepId="2" Radius="20" WaitTime="5" >
+			  <Hotspots>
+			  <Hotspot Name="Altar" XYZ="154.7726,15.78835,71.36309" />
+			  <Hotspot Name="Altar" XYZ="157.6443,15.74019,68.89212" />
+			  <Hotspot Name="Altar" XYZ="157.5057,15.74019,63.8842" />
+			  <Hotspot Name="Altar" XYZ="162.8703,15.751,64.08852" />
+			  <Hotspot Name="Altar" XYZ="164.96,15.74254,61.38395" />
+			  <Hotspot Name="Altar" XYZ="157.8041,15.74421,50.43137" />
+			  <Hotspot Name="Altar" XYZ="154.8743,15.74421,49.77652" />
+			  <Hotspot Name="Altar" XYZ="162.3261,15.7433,44.17598" />
+			  <Hotspot Name="Altar" XYZ="165.0337,15.7433,42.46116" />
+			  </Hotspots>
+			</UseObject>
+		 </If>
+		</If>
+		<!-- [DAILY] Altars of History: step 2 done (next: Recover the Ancient Relic) -->
+		<If Condition="HasQuest(0xE0008015AD0AF9C8) and not IsBranchStepComplete(0xE0008015AD0AF9C8, 1, 2)">
+			<Interact QuestId="0xE0008015AD0AF9C8" Name="Altar" XYZ="154.115,15.912,43.08" />
+			<UseObject ObjectName="Altar" QuestId="0xE0008015AD0AF9C8" BranchId="1" StepId="2" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="150.982,15.943,39.252" />
+		</If>
+		<!-- Pick up [DAILY] Pathfinding -->
+		<If Condition="(not HasQuest(0xE0009E9FAED31D0C)) and (not IsQuestComplete(0xE0009E9FAED31D0C))">
+			<TalkTo QuestId="1" Name="Sergeant Geiz" XYZ="168.0009,15.3717,72.0302" />
+			<PickUpQuest QuestName="[DAILY] Pathfinding " QuestId="0xE0009E9FAED31D0C" SearchRadius="20" UseRange="10" GiverName="Sergeant Geiz" XYZ="168.0009,15.3717,72.0302" />
+		</If>
+		<!-- [DAILY] Pathfinding: Defeat Stonerays (14/15) -->
+		<If Condition="HasQuest(0xE0009E9FAED31D0C) and not IsTaskValueGreaterThan(0xE0009E9FAED31D0C, 2, 0, 13)">
+			<Grind While="HasQuest(0xE0009E9FAED31D0C) and not IsTaskValueGreaterThan(0xE0009E9FAED31D0C, 2, 0, 13)">
+				<GrindArea Name="[DAILY] Pathfinding: Defeat Stonerays (14/15)">
+					<MinLevel>1</MinLevel>
+					<MaxLevel>100</MaxLevel>
+					<Mobs><Mob>Young Cave Stoneray</Mob><Mob>Cave Stoneray</Mob></Mobs>
+					<Hotspots>
+						<Hotspot Name="Young Cave Stoneray" XYZ="169.854,15.186,80.617" />
+						<Hotspot Name="Cave Stoneray" XYZ="169.353,15.075,87.9" />
+					</Hotspots>
+				</GrindArea>
+			</Grind>
+		</If>
+		<!-- [DAILY] Altars of History: step 3 done (next: Return to Lieutenant Sabri) -->
+		<If Condition="HasQuest(0xE0008015AD0AF9C8) and not IsBranchStepComplete(0xE0008015AD0AF9C8, 1, 3)">
+			<UseObject ObjectName="Ancient Altar" QuestId="0xE0008015AD0AF9C8" BranchId="1" StepId="3" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="171.401,15.332,99.937" />
+		</If>
+		<!-- [DAILY] Pathfinding: step 3 done (next: Return to Sergeant Geiz) -->
+		<If Condition="HasQuest(0xE0009E9FAED31D0C) and not IsBranchStepComplete(0xE0009E9FAED31D0C, 1, 3)">
+			<UseObject ObjectName="Stoneray Nest" QuestId="0xE0009E9FAED31D0C" BranchId="1" StepId="3" UseRange="20" IgnoreLOS="True" WaitTime="3000" BlacklistDuration="5" XYZ="180.006,14.194,67.09" />
+			<Grind While="HasQuest(0xE0009E9FAED31D0C) and not IsBranchStepComplete(0xE0009E9FAED31D0C, 1, 3)">
+				<GrindArea Name="[DAILY] Pathfinding: step 3 done (next: Return to Sergeant Geiz)">
+					<MinLevel>1</MinLevel>
+					<MaxLevel>100</MaxLevel>
+					<Mobs><Mob>Stoneray Matriarch</Mob></Mobs>
+					<Hotspots>
+						<Hotspot Name="Stoneray Matriarch" XYZ="180.561,14.221,66.99" />
+					</Hotspots>
+				</GrindArea>
+			</Grind>
+		</If>
+		<!-- Reward: [DAILY] Pathfinding -->
+		<If Condition="HasQuest(0xE0009E9FAED31D0C) and not IsQuestComplete(0xE0009E9FAED31D0C)">
+			<TalkTo QuestId="0xE0009E9FAED31D0C" Name="Sergeant Geiz" XYZ="168.0009,15.3717,72.0302" />
+			<CompleteQuest QuestName="[DAILY] Pathfinding" QuestId="0xE0009E9FAED31D0C" />
+		</If>
+		<!-- Reward: [DAILY] Training Regimen -->
+		<If Condition="HasQuest(0xE000AE0639786886) and not IsQuestComplete(0xE000AE0639786886)">
+			<TalkTo QuestId="0xE000AE0639786886" Name="Colonel Burr" XYZ="338.6,39.82841,13.6" />
+			<CompleteQuest QuestName="[DAILY] Training Regimen" QuestId="0xE000AE0639786886" />		
+		</If>
+		<!-- Reward: [DAILY] Hunters Hunted -->
+		<If Condition="HasQuest(0xE000D0A60DF8B9CA) and not IsQuestComplete(0xE000D0A60DF8B9CA)">
+			<TalkTo QuestId="0xE000D0A60DF8B9CA" Name="Major Tso" XYZ="339.9114,39.84867,13.2095" />
+			<CompleteQuest QuestName="[DAILY] Hunters Hunted" QuestId="0xE000D0A60DF8B9CA" />		
+		</If>
+		<!-- Reward: [DAILY] Pushback -->
+		<If Condition="HasQuest(0xE00074C9A6567C0F) and not IsQuestComplete(0xE00074C9A6567C0F)">
+		    <TalkTo QuestId="0xE00074C9A6567C0F" Name="Sergeant Sager" XYZ="340.4663,39.92714,14.2955" />
+			<CompleteQuest QuestName="[DAILY] Pushback" QuestId="0xE00074C9A6567C0F" />		
+		</If>
+		<!-- Reward: [DAILY] Chopping Block -->
+		<If Condition="HasQuest(0xE0007EC3F5A3CF10) and not IsQuestComplete(0xE0007EC3F5A3CF10)">
+			<TalkTo QuestId="0xE0007EC3F5A3CF10" Name="Lord Ray'en" XYZ="342.1049,40.19028,16.0273" />
+			<CompleteQuest QuestName="[DAILY] Chopping Block" QuestId="0xE0007EC3F5A3CF10" />				
+		</If>
+		<!-- Reward: [WEEKLY] Daily Area: Yavin 4 -->
+		<If Condition="HasQuest(0xE00029D46BB4EA8D) and not IsQuestComplete(0xE00029D46BB4EA8D)">
+			<WaitTimer QuestId="1" WaitTime="5" />
+			<CompleteQuest QuestId="0xE00029D46BB4EA8D" />
+		</If>
+		<!-- Reward: [DAILY] Altars of History -->
+		<If Condition="HasQuest(0xE0008015AD0AF9C8) and not IsQuestComplete(0xE0008015AD0AF9C8)">
+			<TalkTo QuestId="0xE0008015AD0AF9C8" Name="Lieutenant Sabri" XYZ="342.1897,39.8093,11.2921" />
+			<CompleteQuest QuestName="[DAILY] Altars of History" QuestId="0xE0008015AD0AF9C8" />		
+		</If>
+		<!-- Grab any rewards still waiting -->
+		<WaitTimer QuestId="1" WaitTime="5" />
+		<CompleteQuest QuestId="0xE0004A2829872B16" />
+		<CompleteQuest QuestId="0xE0000FF1639BC9A1" />
+		<CompleteQuest QuestId="0xE0009E9FAED31D0C" />
+		<CompleteQuest QuestId="0xE000AE0639786886" />
+		<CompleteQuest QuestId="0xE000D0A60DF8B9CA" />
+		<CompleteQuest QuestId="0xE00074C9A6567C0F" />
+		<CompleteQuest QuestId="0xE0007EC3F5A3CF10" />
+		<CompleteQuest QuestId="0xE00029D46BB4EA8D" />
+		<CompleteQuest QuestId="0xE0008015AD0AF9C8" />
+		<!-- Not finished? Go round again (done steps get skipped) -->
+		<If Condition="(HasQuest(0xE0004A2829872B16) and not IsQuestComplete(0xE0004A2829872B16)) or (HasQuest(0xE0000FF1639BC9A1) and not IsQuestComplete(0xE0000FF1639BC9A1)) or (HasQuest(0xE0007EC3F5A3CF10) and not IsQuestComplete(0xE0007EC3F5A3CF10)) or (HasQuest(0xE00074C9A6567C0F) and not IsQuestComplete(0xE00074C9A6567C0F)) or (HasQuest(0xE000AE0639786886) and not IsQuestComplete(0xE000AE0639786886)) or (HasQuest(0xE0008015AD0AF9C8) and not IsQuestComplete(0xE0008015AD0AF9C8)) or (HasQuest(0xE000D0A60DF8B9CA) and not IsQuestComplete(0xE000D0A60DF8B9CA)) or (HasQuest(0xE0009E9FAED31D0C) and not IsQuestComplete(0xE0009E9FAED31D0C))">
+			<WaitTimer QuestId="1" WaitTime="3" />
+			<LoadProfile Path="[E] Yavin 4 Dailies - Vny" />
+		</If>
+			<UserDialog Title="I'm done!" Message="I'm done with Yavin 4!" />
+	</Questing>
+</Profile>
