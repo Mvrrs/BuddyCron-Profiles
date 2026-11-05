@@ -1,12 +1,12 @@
 <Profile xmlns="http://tempuri.org/ProfileSchema.xsd">
-	<Name>[E] L55 - Oricon Dailies - LethToxic</Name>
+	<Name>[E+R] L55 - Oricon Dailies - LethToxic</Name>
 	<!-- Thanks Cryro. Modified by LethToxic and Vny to include heroics and fix missions. -->
-	<!-- Empire Oricon dailies + [HEROIC 2+] Preemptive Strike. Same shared quest IDs
-	     and field route as Republic. Pickup is the Imperial Mission Terminal
-	     (map -680, 238 → -68.0, 1.22, 23.8). SearchRadius 80 (= 8 m) covers a short miss.
+	<!-- Empire and Republic Oricon dailies + [HEROIC 2+] Preemptive Strike in one file.
+	     Same shared quest IDs and field route for both. Only the pickup terminal, the escape pod wait
+	     and the walk out of the Watchtower are different, so those have an Empire part and a Republic part.
+	     Empire terminal -68.0, 1.22, 23.8. Republic terminal -67.9, 1.22, -27.3. SearchRadius 80 (= 8 m) covers a short miss.
 
 	     Enable Loot NPCs in character settings. Do not add ChangeSetting (not registered). -->
-
 	<GrindAreas>
 		<GrindArea Name="False Paradise Grind 1">
 			<MinLevel>1</MinLevel>
@@ -91,59 +91,97 @@
 	</GrindAreas>
 
 	<Questing>
-		<If Condition="((not HasQuest(0xE00001B055A99E2B)) and (not IsQuestComplete(0xE00001B055A99E2B)) )">
-			<PickUpQuest QuestName="[DAILY] Fallen Forces" QuestId="0xE00001B055A99E2B" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
-		</If>
+		<!-- Empire pickups -->
+		<If Condition="((Me.Class == CharacterClass.Inquisitor) or (Me.Class == CharacterClass.Agent) or (Me.Class == CharacterClass.Warrior) or (Me.Class == CharacterClass.BountyHunter))">
+			<If Condition="((not HasQuest(0xE00001B055A99E2B)) and (not IsQuestComplete(0xE00001B055A99E2B)) )">
+				<PickUpQuest QuestName="[DAILY] Fallen Forces" QuestId="0xE00001B055A99E2B" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
+			</If>
 
-		<If Condition="((not HasQuest(0xE000F85E33CCE6DD)) and (not IsQuestComplete(0xE000F85E33CCE6DD)) )">
-			<PickUpQuest QuestName="[DAILY] Dread Engines" QuestId="0xE000F85E33CCE6DD" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
-		</If>
+			<If Condition="((not HasQuest(0xE000F85E33CCE6DD)) and (not IsQuestComplete(0xE000F85E33CCE6DD)) )">
+				<PickUpQuest QuestName="[DAILY] Dread Engines" QuestId="0xE000F85E33CCE6DD" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
+			</If>
 
-		<If Condition="((not HasQuest(0xE00002686C7A0013)) and (not IsQuestComplete(0xE00002686C7A0013)) )">
-			<PickUpQuest QuestName="[HEROIC 2+] Preemptive Strike" QuestId="0xE00002686C7A0013" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
-		</If>
+			<If Condition="((not HasQuest(0xE00002686C7A0013)) and (not IsQuestComplete(0xE00002686C7A0013)) )">
+				<PickUpQuest QuestName="[HEROIC 2+] Preemptive Strike" QuestId="0xE00002686C7A0013" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
+			</If>
 		
-		<If Condition="((not HasQuest(0xE00057236AF20B38)) and (not IsQuestComplete(0xE00057236AF20B38)) )">
-			<PickUpQuest QuestName="[DAILY] False Paradise" QuestId="0xE00057236AF20B38" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
-		</If>
+			<If Condition="((not HasQuest(0xE00057236AF20B38)) and (not IsQuestComplete(0xE00057236AF20B38)) )">
+				<PickUpQuest QuestName="[DAILY] False Paradise" QuestId="0xE00057236AF20B38" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
+			</If>
 
-		<If Condition="((not HasQuest(0xE000AE5C37109DC3)) and (not IsQuestComplete(0xE000AE5C37109DC3)) )">
-			<PickUpQuest QuestName="[DAILY] The Tower's Core" QuestId="0xE000AE5C37109DC3" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
-		</If>		
+			<If Condition="((not HasQuest(0xE000AE5C37109DC3)) and (not IsQuestComplete(0xE000AE5C37109DC3)) )">
+				<PickUpQuest QuestName="[DAILY] The Tower's Core" QuestId="0xE000AE5C37109DC3" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
+			</If>		
 		
 
-		<!-- Fix: Always check the terminal for the Weekly if it isn't currently in our log -->
-		<If Condition="(not HasQuest(0xE000CB43C400CE19))">
-			<PickUpQuest QuestName="[WEEKLY] Daily Area: Oricon" QuestId="0xE000CB43C400CE19" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
+			<!-- Fix: Always check the terminal for the Weekly if it isn't currently in our log -->
+			<If Condition="(not HasQuest(0xE000CB43C400CE19))">
+				<PickUpQuest QuestName="[WEEKLY] Daily Area: Oricon" QuestId="0xE000CB43C400CE19" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-68.0,1.22,23.8" />
+			</If>
+		</If>
+
+		<!-- Republic pickups -->
+		<If Condition="((Me.Class == CharacterClass.Consular) or (Me.Class == CharacterClass.Smuggler) or (Me.Class == CharacterClass.Knight) or (Me.Class == CharacterClass.Trooper))">
+			<If Condition="((not HasQuest(0xE00001B055A99E2B)) and (not IsQuestComplete(0xE00001B055A99E2B)) )">
+				<PickUpQuest QuestName="[DAILY] Fallen Forces" QuestId="0xE00001B055A99E2B" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-67.90842,1.221729,-27.32974" />
+			</If>
+
+			<If Condition="((not HasQuest(0xE000F85E33CCE6DD)) and (not IsQuestComplete(0xE000F85E33CCE6DD)) )">
+				<PickUpQuest QuestName="[DAILY] Dread Engines" QuestId="0xE000F85E33CCE6DD" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-67.90842,1.221729,-27.32974" />
+			</If>
+
+			<If Condition="((not HasQuest(0xE00002686C7A0013)) and (not IsQuestComplete(0xE00002686C7A0013)) )">
+				<PickUpQuest QuestName="[HEROIC 2+] Preemptive Strike" QuestId="0xE00002686C7A0013" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-67.90842,1.221729,-27.32974" />
+			</If>
+		
+			<If Condition="((not HasQuest(0xE00057236AF20B38)) and (not IsQuestComplete(0xE00057236AF20B38)) )">
+				<PickUpQuest QuestName="[DAILY] False Paradise" QuestId="0xE00057236AF20B38" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-67.90842,1.221729,-27.32974" />
+			</If>
+
+			<If Condition="((not HasQuest(0xE000AE5C37109DC3)) and (not IsQuestComplete(0xE000AE5C37109DC3)) )">
+				<PickUpQuest QuestName="[DAILY] The Tower's Core" QuestId="0xE000AE5C37109DC3" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-67.90842,1.221729,-27.32974" />
+			</If>		
+		
+
+			<!-- Fix: Always check the terminal for the Weekly if it isn't currently in our log -->
+			<If Condition="(not HasQuest(0xE000CB43C400CE19))">
+				<PickUpQuest QuestName="[WEEKLY] Daily Area: Oricon" QuestId="0xE000CB43C400CE19" GiverType="Placeable" UseRange="2" SearchRadius="80" GiverName="Mission Terminal" XYZ="-67.90842,1.221729,-27.32974" />
+			</If>
 		</If>
 
 
 		<!-- 1. [DAILY] Fallen Forces -->
 		<If Condition="((HasQuest(0xE00001B055A99E2B)) and (not IsQuestComplete(0xE00001B055A99E2B)) )">
 			<If Condition="(not IsStepComplete(0xE00001B055A99E2B, 2))">
-				<UseObject QuestId="0xE00001B055A99E2B" BranchId="1" StepId="2" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
-					<Placeables>
-						<Placeable>Escape Pod Hatch</Placeable>
-					</Placeables>
-					<Hotspots>
-						<Hotspot Name="Escape Pod" XYZ="-60.07329,1.26318,22.266117" />
-						<Hotspot Name="Escape Pod" XYZ="-53.79672,0.57828,13.479869" />
-						<Hotspot Name="Escape Pod" XYZ="-46.26268,0.32188,14.037098" />
-						<Hotspot Name="Escape Pod" XYZ="-46.360962,0.39728,19.362679" />
-						<Hotspot Name="Escape Pod" XYZ="-44.84014,0.46518,26.683496" />
-					</Hotspots>
-				</UseObject>
+				<If Condition="((Me.Class == CharacterClass.Inquisitor) or (Me.Class == CharacterClass.Agent) or (Me.Class == CharacterClass.Warrior) or (Me.Class == CharacterClass.BountyHunter))">
+					<UseObject QuestId="0xE00001B055A99E2B" BranchId="1" StepId="2" Radius="50" UseRange="5" WaitTime="2" IgnoreLOS="True" >
+						<Placeables>
+							<Placeable>Escape Pod Hatch</Placeable>
+						</Placeables>
+						<Hotspots>
+							<Hotspot Name="Escape Pod" XYZ="-60.07329,1.26318,22.266117" />
+							<Hotspot Name="Escape Pod" XYZ="-53.79672,0.57828,13.479869" />
+							<Hotspot Name="Escape Pod" XYZ="-46.26268,0.32188,14.037098" />
+							<Hotspot Name="Escape Pod" XYZ="-46.360962,0.39728,19.362679" />
+							<Hotspot Name="Escape Pod" XYZ="-44.84014,0.46518,26.683496" />
+						</Hotspots>
+					</UseObject>
+				</If>
+				<If Condition="((Me.Class == CharacterClass.Consular) or (Me.Class == CharacterClass.Smuggler) or (Me.Class == CharacterClass.Knight) or (Me.Class == CharacterClass.Trooper))">
+					<UseObject QuestId="0xE00001B055A99E2B" BranchId="1" StepId="2" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
+						<Placeables>
+							<Placeable>Escape Pod Hatch</Placeable>
+						</Placeables>
+						<Hotspots>
+							<Hotspot Name="Escape Pod" XYZ="-60.07329,1.26318,22.266117" />
+							<Hotspot Name="Escape Pod" XYZ="-53.79672,0.57828,13.479869" />
+							<Hotspot Name="Escape Pod" XYZ="-46.26268,0.32188,14.037098" />
+							<Hotspot Name="Escape Pod" XYZ="-46.360962,0.39728,19.362679" />
+							<Hotspot Name="Escape Pod" XYZ="-44.84014,0.46518,26.683496" />
+						</Hotspots>
+					</UseObject>
+				</If>
 			</If>
-		</If>
-		<!-- Take the reward as soon as it is done (LethToxic) -->
-		<!-- Quest finished: give the game time to show the reward window, then accept it (twice, in case a fight delays the window) -->
-		<If Condition="HasQuest(0xE00001B055A99E2B) and (not IsQuestComplete(0xE00001B055A99E2B)) and IsStepComplete(0xE00001B055A99E2B, 2)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE00001B055A99E2B" />
-		</If>
-		<If Condition="HasQuest(0xE00001B055A99E2B) and (not IsQuestComplete(0xE00001B055A99E2B)) and IsStepComplete(0xE00001B055A99E2B, 2)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE00001B055A99E2B" />
 		</If>
 
 		<!-- 2. [DAILY] Dread Engines. Skip while in Watchtower Upper (Y ~12). -->
@@ -195,24 +233,6 @@
 				<UseObject QuestId="0xE000F85E33CCE6DD" ObjectName="Terraforming Console" BranchId="1" StepId="5" IgnoreLOS="True" WaitTime="1000" XYZ="-10.61683,0.4287054,63.10888" />
 			</If>
 		</If>
-		<!-- Quest finished: give the game time to show the reward window, then accept it (twice, in case a fight delays the window) -->
-		<If Condition="HasQuest(0xE0006202361A4C71) and (not IsQuestComplete(0xE0006202361A4C71)) and IsStepComplete(0xE0006202361A4C71, 4)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE0006202361A4C71" />
-		</If>
-		<If Condition="HasQuest(0xE0006202361A4C71) and (not IsQuestComplete(0xE0006202361A4C71)) and IsStepComplete(0xE0006202361A4C71, 4)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE0006202361A4C71" />
-		</If>
-		<!-- Quest finished: give the game time to show the reward window, then accept it (twice, in case a fight delays the window) -->
-		<If Condition="HasQuest(0xE000F85E33CCE6DD) and (not IsQuestComplete(0xE000F85E33CCE6DD)) and IsStepComplete(0xE000F85E33CCE6DD, 5)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE000F85E33CCE6DD" />
-		</If>
-		<If Condition="HasQuest(0xE000F85E33CCE6DD) and (not IsQuestComplete(0xE000F85E33CCE6DD)) and IsStepComplete(0xE000F85E33CCE6DD, 5)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE000F85E33CCE6DD" />
-		</If>
 
 		<!-- Walk out of Dread Cavern toward the devices tract, never back to Primary. -->
 		<If Condition="((Me.Position.Y &lt; 8) and (Me.Position.Z &gt; 30) and (IsStepComplete(0xE000F85E33CCE6DD, 5) or IsQuestComplete(0xE000F85E33CCE6DD) or (not HasQuest(0xE000F85E33CCE6DD))))">
@@ -252,15 +272,6 @@
 				<Grind GrindRef="Preemptive Strike Commanders" While="(not IsTaskComplete(0xE00002686C7A0013, 2, 0))"/>
 			  </If>
 		</If>
-		<!-- Quest finished: give the game time to show the reward window, then accept it (twice, in case a fight delays the window) -->
-		<If Condition="HasQuest(0xE00002686C7A0013) and (not IsQuestComplete(0xE00002686C7A0013)) and IsStepComplete(0xE00002686C7A0013, 2)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE00002686C7A0013" />
-		</If>
-		<If Condition="HasQuest(0xE00002686C7A0013) and (not IsQuestComplete(0xE00002686C7A0013)) and IsStepComplete(0xE00002686C7A0013, 2)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE00002686C7A0013" />
-		</If>
 
 		<!-- 4. [DAILY] False Paradise -->
 		<If Condition="((HasQuest(0xE00057236AF20B38)) and (not IsQuestComplete(0xE00057236AF20B38)) )">
@@ -276,15 +287,6 @@
 			<If Condition="(not IsStepComplete(0xE00057236AF20B38, 5))">
 				<Grind GrindRef="False Paradise Grind 2" While="(not IsStepComplete(0xE00057236AF20B38, 5))"/>
 			</If>
-		</If>
-		<!-- Quest finished: give the game time to show the reward window, then accept it (twice, in case a fight delays the window) -->
-		<If Condition="HasQuest(0xE00057236AF20B38) and (not IsQuestComplete(0xE00057236AF20B38)) and IsStepComplete(0xE00057236AF20B38, 5)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE00057236AF20B38" />
-		</If>
-		<If Condition="HasQuest(0xE00057236AF20B38) and (not IsQuestComplete(0xE00057236AF20B38)) and IsStepComplete(0xE00057236AF20B38, 5)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE00057236AF20B38" />
 		</If>
 
 		<!-- Fix: Ensure we don't run back to arrays if we are already progressing or done with the weekly loop -->
@@ -308,27 +310,20 @@
 						XYZ="-21.15199,3.445179,-3.150028" />
 				</If>
 				<If Condition="(Me.Position.Y &gt; 8)">
-					<UseObject QuestId="0xE0009768A8665D68" BranchId="1" StepId="2" Radius="50" UseRange="5" WaitTime="1000" IgnoreLOS="True" >
+					<UseObject QuestId="0xE0009768A8665D68" BranchId="1" StepId="2" Radius="30" UseRange="5" WaitTime="1000" IgnoreLOS="True" >
 						<Placeables>
 							<Placeable>Sensor Array</Placeable>
 						</Placeables>
 						<Hotspots>
 							<Hotspot Name="Sensor Array" XYZ="-31.86213,11.29751,-5.660943" />
-							<Hotspot Name="Sensor Array" XYZ="-25.01282,11.91468,-8.59059" />
-							<Hotspot Name="Sensor Array" XYZ="-17.11453,11.91465,-4.48603" />
+							<Hotspot Name="Sensor Array" XYZ="-28.463026,12.34769,-5.2373257" />
+							<Hotspot Name="Sensor Array" XYZ="-25.066027,12.35919,-8.625327" />
+							<Hotspot Name="Sensor Array" XYZ="-20.429373,12.34699,-7.803526" />
+							<Hotspot Name="Sensor Array" XYZ="-17.009373,12.34729,-4.381526" />
 						</Hotspots>
 					</UseObject>
 				</If>
 			</If>
-		</If>
-		<!-- Quest finished: give the game time to show the reward window, then accept it (twice, in case a fight delays the window) -->
-		<If Condition="HasQuest(0xE0009768A8665D68) and (not IsQuestComplete(0xE0009768A8665D68)) and IsStepComplete(0xE0009768A8665D68, 2)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE0009768A8665D68" />
-		</If>
-		<If Condition="HasQuest(0xE0009768A8665D68) and (not IsQuestComplete(0xE0009768A8665D68)) and IsStepComplete(0xE0009768A8665D68, 2)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE0009768A8665D68" />
 		</If>
 
 		<!-- 5. [DAILY] The Tower's Core -->
@@ -370,32 +365,15 @@
 			</If>
 
 			<If Condition="((Me.Position.Y &gt; 8) and (IsStepComplete(0xE000AE5C37109DC3, 6)))">
-				<MoveTo QuestId="1" Name="Leave Watchtower / outer catwalk" XYZ="-70.4872,0.3455198,30.1943" />
+				<If Condition="((Me.Class == CharacterClass.Inquisitor) or (Me.Class == CharacterClass.Agent) or (Me.Class == CharacterClass.Warrior) or (Me.Class == CharacterClass.BountyHunter))">
+					<MoveTo QuestId="1" Name="Leave Watchtower / outer catwalk" XYZ="-70.4872,0.3455198,30.1943" />
+				</If>
+				<If Condition="((Me.Class == CharacterClass.Consular) or (Me.Class == CharacterClass.Smuggler) or (Me.Class == CharacterClass.Knight) or (Me.Class == CharacterClass.Trooper))">
+					<MoveTo QuestId="1" Name="Leave Watchtower / outer catwalk" XYZ="-66.8285,0.8841808,-23.1943" />
+				</If>
 			</If>
 		</If>
-		<!-- Quest finished: give the game time to show the reward window, then accept it (twice, in case a fight delays the window) -->
-		<If Condition="HasQuest(0xE000AE5C37109DC3) and (not IsQuestComplete(0xE000AE5C37109DC3)) and IsStepComplete(0xE000AE5C37109DC3, 6)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE000AE5C37109DC3" />
-		</If>
-		<If Condition="HasQuest(0xE000AE5C37109DC3) and (not IsQuestComplete(0xE000AE5C37109DC3)) and IsStepComplete(0xE000AE5C37109DC3, 6)">
-			<WaitTimer QuestId="1" WaitTime="5" />
-			<CompleteQuest QuestId="0xE000AE5C37109DC3" />
-		</If>
-
-		<!-- Last check: any reward still waiting (also the weekly once all dailies are done) -->
-		<WaitTimer QuestId="1" WaitTime="5" />
-		<CompleteQuest QuestId="0xE00001B055A99E2B" />
-		<CompleteQuest QuestId="0xE000F85E33CCE6DD" />
-		<CompleteQuest QuestId="0xE00002686C7A0013" />
-		<CompleteQuest QuestId="0xE00057236AF20B38" />
-		<CompleteQuest QuestId="0xE000AE5C37109DC3" />
-		<!-- the weekly's reward shows once the dailies are handed in -->
-		<If Condition="HasQuest(0xE000CB43C400CE19) and (not IsQuestComplete(0xE000CB43C400CE19))">
-			<WaitTimer QuestId="1" WaitTime="5" />
-		</If>
-		<CompleteQuest QuestId="0xE000CB43C400CE19" />
-
+		
 		<UserDialog Title="I'm done!" Message="I'm done with Oricon!" />
 
 	</Questing>
