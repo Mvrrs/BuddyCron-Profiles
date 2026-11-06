@@ -415,6 +415,15 @@
 				<CompleteQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0006E78C9AB3836"/> 			
 				<CompleteQuest QuestName="[WEEKLY] Czerka Takeover" QuestId="0xE000353261D88E47"/> 			
 			</If>
+
+			<!-- Last check: take any reward still waiting. The Republic dailies finish on the spot with a reward window (no dropbox), so they leave the log before the block above runs. -->
+			<WaitTimer QuestId="1" WaitTime="5" />
+			<CompleteQuest QuestName="[DAILY] Give And Take" QuestId="0xE000E14F725E1809"/>
+			<CompleteQuest QuestName="[DAILY] Workforce Reduction" QuestId="0xE0009D1B108AE7B4"/>
+			<CompleteQuest QuestName="[DAILY] Manual Shutdown" QuestId="0xE0006A54B7D0F1C2"/>
+			<CompleteQuest QuestName="[DAILY] Anti-Toxin Recovery" QuestId="0xE00009A5ADED8A3C"/>
+			<CompleteQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0006E78C9AB3836"/>
+			<CompleteQuest QuestName="[WEEKLY] Czerka Takeover" QuestId="0xE000353261D88E47"/>
 		</If>
 
 		<UserDialog Title="Done!" Message="I'm Done!" />
