@@ -60,17 +60,6 @@
 				<Hotspot Name="Project" XYZ="-16.47721,1.301,2.057819" />
 			</Hotspots>
 		</GrindArea>			
-		<GrindArea Name="Tentacles">
-			<MinLevel>1</MinLevel>
-			<MaxLevel>100</MaxLevel>
-			<Mobs>
-				<Mob>Tentacle</Mob>
-			</Mobs>
-			<Hotspots>
-				<Hotspot Name="Tentacle 1" XYZ="-17.41,1.38,0.66" />
-				<Hotspot Name="Tentacle 2" XYZ="-17.25,1.32,2.81" />
-			</Hotspots>
-		</GrindArea>
 		<GrindArea Name="Off Message">
 			<MinLevel>1</MinLevel>
 			<MaxLevel>100</MaxLevel>
@@ -82,6 +71,24 @@
 			</Hotspots>
 		</GrindArea>
 	</GrindAreas>
+
+	<CodeChunks>
+		<!-- Project DS-5 can't be hurt while a Tentacle is up, and killing one Tentacle kills both.
+		     While the DS-5 fight runs, this targets the nearest live Tentacle if the bot is on anything else. -->
+		<CodeChunk Name="TentacleFirst" Type="Hook"><![CDATA[
+			BuddyCron.Objects.HeroCharacter best = null;
+			foreach (var c in BuddyCron.Managers.HeroObjectManager.GetObjects<BuddyCron.Objects.HeroCharacter>())
+			{
+				if (c == null || c.IsDead || c.Name != "Tentacle") continue;
+				if (best == null || c.Distance < best.Distance) best = c;
+			}
+			if (best == null) return false;
+			var cur = BuddyCron.Core.Target;
+			if (cur != null && !cur.IsDead && cur.Name == "Tentacle") return false;
+			best.SetTarget();
+			return false;
+		]]></CodeChunk>
+	</CodeChunks>
 
 	<Questing>
 		<!-- ===== Empire ===== -->
@@ -223,10 +230,9 @@
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 7))">
-					<While Condition="(not IsStepComplete(0xE000746FA7B97065, 7))">
-						<Grind GrindRef="Tentacles" While="any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
-						<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE000746FA7B97065, 7)) and not any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
-					</While>
+					<Hook Name="TentacleFirst" Operation="I" Index="0" Location="TreeStart" />		<!-- switch to a Tentacle as soon as one is up -->
+					<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE000746FA7B97065, 7))"/>
+					<Hook Name="TentacleFirst" Operation="R" Location="TreeStart" />
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 8))">
@@ -405,10 +411,9 @@
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 7))">
-					<While Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 7))">
-						<Grind GrindRef="Tentacles" While="any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
-						<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE00009A5ADED8A3C, 7)) and not any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
-					</While>
+					<Hook Name="TentacleFirst" Operation="I" Index="0" Location="TreeStart" />		<!-- switch to a Tentacle as soon as one is up -->
+					<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE00009A5ADED8A3C, 7))"/>
+					<Hook Name="TentacleFirst" Operation="R" Location="TreeStart" />
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 8))">
