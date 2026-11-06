@@ -60,6 +60,17 @@
 				<Hotspot Name="Project" XYZ="-16.47721,1.301,2.057819" />
 			</Hotspots>
 		</GrindArea>			
+		<GrindArea Name="Tentacles">
+			<MinLevel>1</MinLevel>
+			<MaxLevel>100</MaxLevel>
+			<Mobs>
+				<Mob>Tentacle</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot Name="Tentacle 1" XYZ="-17.41,1.38,0.66" />
+				<Hotspot Name="Tentacle 2" XYZ="-17.25,1.32,2.81" />
+			</Hotspots>
+		</GrindArea>
 		<GrindArea Name="Off Message">
 			<MinLevel>1</MinLevel>
 			<MaxLevel>100</MaxLevel>
@@ -212,7 +223,10 @@
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 7))">
-					<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE000746FA7B97065, 7))"/>
+					<While Condition="(not IsStepComplete(0xE000746FA7B97065, 7))">
+						<Grind GrindRef="Tentacles" While="any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
+						<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE000746FA7B97065, 7)) and not any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
+					</While>
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 8))">
@@ -391,7 +405,10 @@
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 7))">
-					<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE00009A5ADED8A3C, 7))"/>
+					<While Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 7))">
+						<Grind GrindRef="Tentacles" While="any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
+						<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE00009A5ADED8A3C, 7)) and not any(a.Name == 'Tentacle' for a in Me.Attackers)"/>
+					</While>
 				</If>
 			
 				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 8))">
