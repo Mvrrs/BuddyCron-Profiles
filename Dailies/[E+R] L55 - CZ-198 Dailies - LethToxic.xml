@@ -244,6 +244,15 @@
 				<CompleteQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0001AC2FCB6FD6F"/>
 				<CompleteQuest QuestName="[WEEKLY] Daily Area: CZ-198" QuestId="0xE000D5C912883A23"/>
 			</If>
+
+			<!-- Last check: take any reward still waiting (in case a daily finishes on the spot with a reward window and leaves the log before the block above runs). -->
+			<WaitTimer QuestId="1" WaitTime="5" />
+			<CompleteQuest QuestName="[DAILY] What's Yours Is Mine" QuestId="0xE000A89E340382EC"/>
+			<CompleteQuest QuestName="[DAILY] Staff Cuts" QuestId="0xE0009CF3F58AD94C"/>
+			<CompleteQuest QuestName="[DAILY] Droid Demolition" QuestId="0xE000421F7E832C08"/>
+			<CompleteQuest QuestName="[DAILY] Anti-Toxin Acquisition" QuestId="0xE000746FA7B97065"/>
+			<CompleteQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0001AC2FCB6FD6F"/>
+			<CompleteQuest QuestName="[WEEKLY] Daily Area: CZ-198" QuestId="0xE000D5C912883A23"/>
 		</If>
 
 		<!-- ===== Republic ===== -->
