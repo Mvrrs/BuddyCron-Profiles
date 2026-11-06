@@ -1,7 +1,7 @@
 <Profile xmlns="http://tempuri.org/ProfileSchema.xsd">
 	<Name>[E+R] L55 - CZ-198 Dailies - LethToxic</Name>
 	<!-- LethToxic created. Timothy said drop UseTransport, built-in lifts handle it. -->
-	<!-- Empire and Republic in one file: your class picks the side. Each side is your own profile, unchanged. -->
+	<!-- Empire and Republic in one file: your class picks the side. Each side is your own profile, plus the elevator rides down to Freight Depot and Waste Disposal. -->
 	
 	<Vendors>
 		<Hotspot Name="Imperial Medical Droid" XYZ="8.2288,8.801001,-0.895" /> <!-- CZ-198 Imperial Landing Zone -->
@@ -127,6 +127,11 @@
 			</If>	
 		
 		
+			<!-- Elevator to Freight Depot (your recorded lift spot) -->
+			<If Condition="(Me.Position.X &gt; -14.66) and (Me.Position.Y &gt; 7) and ((HasQuest(0xE000A89E340382EC) and not IsStepComplete(0xE000A89E340382EC, 2)) or (HasQuest(0xE0001AC2FCB6FD6F) and not IsQuestComplete(0xE0001AC2FCB6FD6F)) or (HasQuest(0xE000746FA7B97065) and not IsStepComplete(0xE000746FA7B97065, 8)))">
+				<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Freight Depot" XYZ="-12.764,7.961,-0.363" />
+			</If>
+
 			<!-- [DAILY] What's Yours Is Mine -->
 			<If Condition="((HasQuest(0xE000A89E340382EC)) and (not IsQuestComplete(0xE000A89E340382EC)) )">
 				<If Condition="(not IsStepComplete(0xE000A89E340382EC, 2))">
@@ -171,6 +176,11 @@
 			<If Condition="((HasQuest(0xE000746FA7B97065)) and (not IsQuestComplete(0xE000746FA7B97065)) )">
 				<If Condition="((HasQuest(0xE0001AC2FCB6FD6F)) and (not IsQuestComplete(0xE0001AC2FCB6FD6F)))">
 					<Grind GrindRef="Off Message" While="(not IsQuestComplete(0xE0001AC2FCB6FD6F))"/>
+				</If>
+
+				<!-- Elevator down to Waste Disposal (your recorded lift spot) -->
+				<If Condition="(Me.Position.Y &gt; 3.9) and (not IsStepComplete(0xE000746FA7B97065, 8))">
+					<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Waste Disposal" XYZ="-23.364,6.47,9.985" />
 				</If>
 
 				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 2))">
@@ -288,6 +298,11 @@
 			</If>	
 		
 		
+			<!-- Elevator to Freight Depot (your recorded lift spot) -->
+			<If Condition="(Me.Position.X &lt; -36.88) and (Me.Position.Y &gt; 7) and ((HasQuest(0xE000E14F725E1809) and not IsStepComplete(0xE000E14F725E1809, 2)) or (HasQuest(0xE0006E78C9AB3836) and not IsQuestComplete(0xE0006E78C9AB3836)) or (HasQuest(0xE00009A5ADED8A3C) and not IsStepComplete(0xE00009A5ADED8A3C, 8)))">
+				<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Freight Depot" XYZ="-38.338,7.951,1.764" />
+			</If>
+
 			<!-- [DAILY] Give And Take -->
 			<If Condition="((HasQuest(0xE000E14F725E1809)) and (not IsQuestComplete(0xE000E14F725E1809)) )">
 				<If Condition="(not IsStepComplete(0xE000E14F725E1809, 2))">
@@ -331,6 +346,11 @@
 			<If Condition="((HasQuest(0xE00009A5ADED8A3C)) and (not IsQuestComplete(0xE00009A5ADED8A3C)) )">
 				<If Condition="((HasQuest(0xE0006E78C9AB3836)) and (not IsQuestComplete(0xE0006E78C9AB3836)))">
 					<Grind GrindRef="Off Message" While="(not IsQuestComplete(0xE0006E78C9AB3836))"/>
+				</If>
+
+				<!-- Elevator down to Waste Disposal (your recorded lift spot) -->
+				<If Condition="(Me.Position.Y &gt; 3.9) and (not IsStepComplete(0xE00009A5ADED8A3C, 8))">
+					<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Waste Disposal" XYZ="-23.364,6.47,9.985" />
 				</If>
 
 				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 2))">
