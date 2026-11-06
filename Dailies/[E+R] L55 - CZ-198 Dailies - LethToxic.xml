@@ -1,0 +1,419 @@
+<Profile xmlns="http://tempuri.org/ProfileSchema.xsd">
+	<Name>[E+R] L55 - CZ-198 Dailies - LethToxic</Name>
+	<!-- LethToxic created. One file for Empire and Republic: your class picks the side. -->
+	<!-- Version 1.3 - LethToxic: Empire and Republic in one file; elevators to Freight Depot and Waste Disposal taken as in the recordings. -->
+	
+	<Vendors>
+		<Hotspot Name="Imperial Medical Droid" XYZ="8.2288,8.801001,-0.895" /> <!-- CZ-198 Imperial Landing Zone -->
+		<Hotspot Name="Imperial Medical Droid" XYZ="-13.1615,7.801,2.6029" /> <!-- CZ-198 before first elevator -->
+		<Hotspot Name="Republic Medical Droid" XYZ="-61.5,8.800674,1.71" /> <!-- CZ-198 Republic Landing Zone -->
+		<Hotspot Name="Republic Medical Droid" XYZ="-39.1416,7.801,2.5987" /> <!-- CZ-198 before first elevator -->
+	</Vendors>
+
+	<GrindAreas>
+		<GrindArea Name="Staff Cuts">
+			<MinLevel>1</MinLevel>
+			<MaxLevel>100</MaxLevel>
+			<Mobs>
+				<Mob>Czerka Combat Specialist</Mob>
+				<Mob>Czerka Support Officer</Mob>
+				<Mob>Czerka Unit Captain</Mob>
+				<Mob>Czerka Containment Droid</Mob>
+				<Mob>Czerka Suppression Droid</Mob>
+				<Mob>Czerka Observer Driod</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot Name="Czerka Crew Loc. 1" XYZ="-11.13177,7.321,6.516369" />
+				<Hotspot Name="Czerka Crew Loc. 2" XYZ="-2.945385,8.821001,3.389069" />
+				<Hotspot Name="Czerka Crew Loc. 3" XYZ="-5.219053,8.801001,1.907631" />
+				<Hotspot Name="Czerka Crew Loc. 4" XYZ="-4.887334,8.800031,6.036219" />
+				<Hotspot Name="Czerka Crew Loc. 5" XYZ="-3.18063,8.801001,4.314132" />			
+			</Hotspots>
+		</GrindArea>	
+		<GrindArea Name="Workforce Reduction">
+			<MinLevel>1</MinLevel>
+			<MaxLevel>100</MaxLevel>
+			<Mobs>
+				<Mob>Czerka Containment Droid</Mob>
+				<Mob>Czerka Support Officer</Mob>
+				<Mob>Czerka Observer Droid</Mob>
+				<Mob>Czerka Combat Specialist</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot Name="Czerka Crew Loc. 1" XYZ="-42.99039,7.309303,6.435942" />
+				<Hotspot Name="Czerka Crew Loc. 2" XYZ="-40.79988,7.801,1.719404" />
+				<Hotspot Name="Czerka Crew Loc. 3" XYZ="-40.71667,7.801,-1.123103" />
+				<Hotspot Name="Czerka Crew Loc. 4" XYZ="-43.95172,7.8125,-0.7274484" />
+				<Hotspot Name="Czerka Crew Loc. 5" XYZ="-46.29009,8.801011,5.775673" />			
+				<Hotspot Name="Czerka Crew Loc. 6" XYZ="-48.08829,8.802676,5.575443" />	
+				<Hotspot Name="Czerka Crew Loc. 7" XYZ="-48.16343,8.821001,3.308605" />			
+			</Hotspots>
+		</GrindArea>	
+		<GrindArea Name="Project DS-5">
+			<MinLevel>1</MinLevel>
+			<MaxLevel>100</MaxLevel>
+			<Mobs>
+				<Mob>Tentacle</Mob>
+				<Mob>Project DS-5</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot Name="Project" XYZ="-16.47721,1.301,2.057819" />
+			</Hotspots>
+		</GrindArea>			
+		<GrindArea Name="Off Message">
+			<MinLevel>1</MinLevel>
+			<MaxLevel>100</MaxLevel>
+			<Mobs>
+				<Mob>CZ-5X Eradicator Droid</Mob>
+			</Mobs>
+			<Hotspots>
+				<Hotspot Name="CZ-5X Eradicator Droid" XYZ="-20.7789,6.748784,-5.5328" />
+			</Hotspots>
+		</GrindArea>
+	</GrindAreas>
+
+	<Questing>
+		<!-- ===== Empire ===== -->
+		<If Condition="(Me.Class == CharacterClass.Warrior or Me.Class == CharacterClass.Juggernaut or Me.Class == CharacterClass.Marauder or Me.Class == CharacterClass.Inquisitor or Me.Class == CharacterClass.Sorcerer or Me.Class == CharacterClass.Assassin or Me.Class == CharacterClass.Agent or Me.Class == CharacterClass.Operative or Me.Class == CharacterClass.Sniper or Me.Class == CharacterClass.BountyHunter or Me.Class == CharacterClass.Powertech or Me.Class == CharacterClass.Mercenary)">
+			<If Condition="((not HasQuest(0xE000A89E340382EC)) and (not IsQuestComplete(0xE000A89E340382EC)) )">
+				<PickUpQuest QuestName="[DAILY] What's Yours Is Mine" QuestId="0xE000A89E340382EC" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="4.476641,8.802309,2.756657" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE0009CF3F58AD94C)) and (not IsQuestComplete(0xE0009CF3F58AD94C)) )">
+				<PickUpQuest QuestName="[DAILY] Staff Cuts" QuestId="0xE0009CF3F58AD94C" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="4.476641,8.802309,2.756657" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE000421F7E832C08)) and (not IsQuestComplete(0xE000421F7E832C08)) )">
+				<PickUpQuest QuestName="[DAILY] Droid Demolition" QuestId="0xE000421F7E832C08" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="4.476641,8.802309,2.756657" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE000746FA7B97065)) and (not IsQuestComplete(0xE000746FA7B97065)) )">
+				<PickUpQuest QuestName="[DAILY] Anti-Toxin Acquisition" QuestId="0xE000746FA7B97065" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="4.476641,8.802309,2.756657" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE0001AC2FCB6FD6F)) and (not IsQuestComplete(0xE0001AC2FCB6FD6F)) )">
+				<PickUpQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0001AC2FCB6FD6F" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="4.476641,8.802309,2.756657" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE000D5C912883A23)) and (not IsQuestComplete(0xE000D5C912883A23)) )">
+				<PickUpQuest QuestName="[WEEKLY] Daily Area: CZ-198" QuestId="0xE000D5C912883A23" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="4.476641,8.802309,2.756657" />
+			</If>	
+
+
+		
+			<!-- [DAILY] Droid Demolition -->
+			<If Condition="((HasQuest(0xE000421F7E832C08)) and (not IsQuestComplete(0xE000421F7E832C08)) )">
+				<If Condition="(not IsStepComplete(0xE000421F7E832C08, 2))">
+					<UseObject QuestId="0xE000421F7E832C08" BranchId="1" StepId="2" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
+						<Placeables>
+							<Placeable>ZX-10 Storage Pod</Placeable>
+							<Placeable>Kolto Container</Placeable>
+							<Placeable>Biotoxin Container</Placeable>						
+						</Placeables>
+						<Hotspots>
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-6.973491,7.8125,-2.08127" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-6.939635,7.8125,-2.57934" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-6.653218,7.801,1.267386" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-6.638542,7.801,1.772125" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-10.84166,7.801,1.811586" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-10.82228,7.801,1.33218" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-10.71297,7.801,-0.4059792" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-10.71822,7.801,-0.8717285" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-8.797577,7.801,-3.00131" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-8.300447,7.801,-2.990873" />
+						</Hotspots>
+					</UseObject>
+				</If>
+			</If>	
+		
+		
+			<!-- [DAILY] What's Yours Is Mine -->
+			<If Condition="((HasQuest(0xE000A89E340382EC)) and (not IsQuestComplete(0xE000A89E340382EC)) )">
+				<If Condition="(not IsStepComplete(0xE000A89E340382EC, 2))">
+					<If Condition="(not IsTaskComplete(0xE000A89E340382EC, 2, 1))">
+						<UseObject QuestId="0xE000A89E340382EC" BranchId="1" StepId="2" TaskId="1" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
+							<Placeables>
+								<Placeable>Kolto Container</Placeable>
+							</Placeables>
+							<Hotspots>
+								<Hotspot Name="Kolto Container" XYZ="-17.207,7.801,-0.02757487" />
+								<Hotspot Name="Kolto Container" XYZ="-20.24525,8.802568,3.048774" />
+								<Hotspot Name="Kolto Container" XYZ="-21.84746,8.801001,2.608991" />
+								<Hotspot Name="Kolto Container" XYZ="-24.66052,8.801001,2.691235" />
+								<Hotspot Name="Kolto Container" XYZ="-25.23615,8.801001,0.269857" />
+								<Hotspot Name="Kolto Container" XYZ="-25.12292,8.804976,-1.40711" />
+								<Hotspot Name="Kolto Container" XYZ="-22.11334,8.801001,-0.4186846" />
+							</Hotspots>
+						</UseObject>
+					</If>	
+					<If Condition="(not IsTaskComplete(0xE000A89E340382EC, 2, 0))">
+						<UseObject QuestId="0xE000A89E340382EC" BranchId="1" StepId="2" TaskId="0" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
+							<Placeables>
+								<Placeable>Biotoxin Container</Placeable>
+							</Placeables>
+							<Hotspots>
+								<Hotspot Name="Biotoxin Container" XYZ="-17.3191,6.301,-3.361214" />
+								<Hotspot Name="Biotoxin Container" XYZ="-19.86136,6.804534,-0.3250292" />
+								<Hotspot Name="Biotoxin Container" XYZ="-19.25863,6.801,2.888307" />		
+								<Hotspot Name="Biotoxin Container" XYZ="-17.22131,6.301,3.960116" />
+								<Hotspot Name="Biotoxin Container" XYZ="-16.56275,6.301,7.38764" />
+								<Hotspot Name="Biotoxin Container" XYZ="-21.89839,6.801,7.02714" />
+								<Hotspot Name="Biotoxin Container" XYZ="-22.65039,6.801007,3.413967" />
+								<Hotspot Name="Biotoxin Container" XYZ="-22.51224,6.801007,0.7252065" />
+							</Hotspots>
+						</UseObject>
+					</If>					
+				</If>
+			</If>		
+		
+				
+			<!-- [DAILY] Anti-Toxin Acquisition -->
+			<If Condition="((HasQuest(0xE000746FA7B97065)) and (not IsQuestComplete(0xE000746FA7B97065)) )">
+				<!-- Elevator to Freight Depot (as in your recordings) -->
+				<If Condition="(Me.Position.X &gt; -14.66) and (Me.Position.Y &gt; 7) and (not IsStepComplete(0xE000746FA7B97065, 2))">
+					<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Freight Depot" XYZ="-12.764,7.961,-0.363" />
+				</If>
+				<If Condition="((HasQuest(0xE0001AC2FCB6FD6F)) and (not IsQuestComplete(0xE0001AC2FCB6FD6F)))">
+					<Grind GrindRef="Off Message" While="(not IsQuestComplete(0xE0001AC2FCB6FD6F))"/>
+				</If>
+
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 2))">
+					<!-- Elevator down to Waste Disposal (as in your recordings) -->
+					<If Condition="(Me.Position.Y &gt; 3.9)">
+						<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Waste Disposal" XYZ="-23.364,6.47,9.985" />
+					</If>
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-25.89852,1.501,5.701831" />
+				</If>	
+			
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 3))">
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-28.15293,1.366044,1.610306" />
+					<UseObject QuestId="0xE000746FA7B97065" ObjectName="Pipes" BranchId="1" StepId="3" IgnoreLOS="True" IgnoreQuestRelation="True" Radius="50" UseRange="50" WaitTime="5" XYZ="-28.34567,3.45,1.052138" /> 
+				</If>	
+			
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 4))">
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-30.98007,1.358648,2.834285" />
+					<UseObject QuestId="0xE000746FA7B97065" ObjectName="Power Junction Box" BranchId="1" StepId="4" Radius="20" WaitTime="5" XYZ="-30.98007,1.358648,2.834285" />
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 5))">
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-25.13031,1.426604,0.4213598" />
+					<UseObject QuestId="0xE000746FA7B97065" ObjectName="Pipe System Controls" BranchId="1" StepId="5" Radius="1" UseRange="7" IgnoreLOS="True" IgnoreQuestRelation="True" WaitTime="5" XYZ="-24.8007,1.8813,0.3097" />
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 6))">
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-25.22237,1.300737,1.489628" />
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-18.95885,1.480305,2.371511" />
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-16.91866,1.318459,3.549692" />
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-16.01623,1.335254,1.179256" />
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-18.26612,1.524709,2.128933" />
+					<UseObject QuestId="0xE000746FA7B97065" ObjectName="Czerka Anti-Toxin" BranchId="1" StepId="6" Radius="20" WaitTime="5" XYZ="-18.26612,1.524709,2.128933" />
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 7))">
+					<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE000746FA7B97065, 7))"/>
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 8))">
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-18.26612,1.524709,2.128933" />
+					<UseObject QuestId="0xE000746FA7B97065" ObjectName="Czerka Anti-Toxin" BranchId="1" StepId="8" Radius="20" WaitTime="5" XYZ="-18.26612,1.524709,2.128933" />
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE000746FA7B97065, 9))">
+					<MoveTo QuestId="0xE000746FA7B97065" XYZ="-23.31157,6.337068,9.881577" />
+				</If>
+			</If>	
+
+
+			<!-- [DAILY] Staff Cuts -->
+			<If Condition="((HasQuest(0xE0009CF3F58AD94C)) and (not IsQuestComplete(0xE0009CF3F58AD94C)) )">
+				<If Condition="(not IsStepComplete(0xE0009CF3F58AD94C, 2))">
+					<Grind GrindRef="Staff Cuts" While="(not IsStepComplete(0xE0009CF3F58AD94C, 2))"/>
+				</If>					
+			</If>	
+
+			<!-- Going to complete Dailies -->
+			<If Condition="((HasQuest(0xE0009CF3F58AD94C)) and (IsStepComplete(0xE0009CF3F58AD94C, 2)) and (HasQuest(0xE000746FA7B97065)) and (IsStepComplete(0xE000746FA7B97065, 8)) and (HasQuest(0xE000A89E340382EC)) and (IsStepComplete(0xE000A89E340382EC, 2)) and (HasQuest(0xE000421F7E832C08)) and (IsStepComplete(0xE000421F7E832C08, 2)))">	
+				<MoveTo QuestId="0xE0009CF3F58AD94C" XYZ="4.476641,8.802309,2.756657"  />
+				<UseObject QuestId="0xE0009CF3F58AD94C" ObjectName="Mission Dropbox" BranchId="1" StepId="3" WaitTime="4" UseRange="4" IgnoreLOS="True" XYZ="4.476641,8.802309,2.756657"  />
+				<CompleteQuest QuestName="[DAILY] What's Yours Is Mine" QuestId="0xE000A89E340382EC"/>	
+				<CompleteQuest QuestName="[DAILY] Staff Cuts" QuestId="0xE0009CF3F58AD94C"/>	
+				<CompleteQuest QuestName="[DAILY] Droid Demolition" QuestId="0xE000421F7E832C08"/>	
+				<CompleteQuest QuestName="[DAILY] Anti-Toxin Acquisition" QuestId="0xE000746FA7B97065"/>
+				<CompleteQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0001AC2FCB6FD6F"/>
+				<CompleteQuest QuestName="[WEEKLY] Daily Area: CZ-198" QuestId="0xE000D5C912883A23"/>
+			</If>
+		</If>
+
+		<!-- ===== Republic ===== -->
+		<If Condition="not (Me.Class == CharacterClass.Warrior or Me.Class == CharacterClass.Juggernaut or Me.Class == CharacterClass.Marauder or Me.Class == CharacterClass.Inquisitor or Me.Class == CharacterClass.Sorcerer or Me.Class == CharacterClass.Assassin or Me.Class == CharacterClass.Agent or Me.Class == CharacterClass.Operative or Me.Class == CharacterClass.Sniper or Me.Class == CharacterClass.BountyHunter or Me.Class == CharacterClass.Powertech or Me.Class == CharacterClass.Mercenary)">
+			<If Condition="((not HasQuest(0xE000E14F725E1809)) and (not IsQuestComplete(0xE000E14F725E1809)) )">
+				<PickUpQuest QuestName="[DAILY] Give And Take" QuestId="0xE000E14F725E1809" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="-55.38471,8.803679,0.3304866" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE0009D1B108AE7B4)) and (not IsQuestComplete(0xE0009D1B108AE7B4)) )">
+				<PickUpQuest QuestName="[DAILY] Workforce Reduction" QuestId="0xE0009D1B108AE7B4" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="-55.38471,8.803679,0.3304866" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE0006A54B7D0F1C2)) and (not IsQuestComplete(0xE0006A54B7D0F1C2)) )">
+				<PickUpQuest QuestName="[DAILY] Manual Shutdown" QuestId="0xE0006A54B7D0F1C2" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="-55.38471,8.803679,0.3304866" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE00009A5ADED8A3C)) and (not IsQuestComplete(0xE00009A5ADED8A3C)) )">
+				<PickUpQuest QuestName="[DAILY] Anti-Toxin Recovery" QuestId="0xE00009A5ADED8A3C" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="-55.38471,8.803679,0.3304866" />
+			</If>	
+			<If Condition="((not HasQuest(0xE000353261D88E47)) and (not IsQuestComplete(0xE000353261D88E47)) )">
+				<PickUpQuest QuestName="[WEEKLY] Czerka Takeover" QuestId="0xE000353261D88E47" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" X="-55.38471" Y="8.803679" Z="0.3304866" />
+			</If>	
+
+			<If Condition="((not HasQuest(0xE0006E78C9AB3836)) and (not IsQuestComplete(0xE0006E78C9AB3836)) )">
+				<PickUpQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0006E78C9AB3836" GiverType="Placeable" UseRange="2" Radius="5" GiverName="Mission Terminal" XYZ="-55.38471,8.803679,0.3304866" />
+			</If>	
+
+		
+			<!-- [DAILY] Manual Shutdown -->
+			<If Condition="((HasQuest(0xE0006A54B7D0F1C2)) and (not IsQuestComplete(0xE0006A54B7D0F1C2)) )">
+				<If Condition="(not IsStepComplete(0xE0006A54B7D0F1C2, 2))">
+					<UseObject QuestId="0xE0006A54B7D0F1C2" BranchId="1" StepId="2" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
+						<Placeables>
+							<Placeable>ZX-10 Storage Pod</Placeable>
+							<Placeable>Kolto Container</Placeable>
+							<Placeable>Biotoxin Container</Placeable>						
+						</Placeables>
+						<Hotspots>
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-44.83297,7.8125,-0.7616417" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-44.83282,7.812507,-1.266331" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-42.81999,7.800999,1.962021" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-42.39793,7.800999,1.933102" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-40.3761,7.801,1.929738" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-40.72229,7.801,1.557697" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-40.23026,7.801,-0.8544174" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-40.23796,7.801,-1.331909" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-42.29897,7.801,-3.066272" />
+							<Hotspot Name="ZX-10 Storage Pod" XYZ="-42.75275,7.801,-3.09298" />
+						</Hotspots>
+					</UseObject>
+				</If>
+			</If>	
+		
+		
+			<!-- [DAILY] Give And Take -->
+			<If Condition="((HasQuest(0xE000E14F725E1809)) and (not IsQuestComplete(0xE000E14F725E1809)) )">
+				<If Condition="(not IsStepComplete(0xE000E14F725E1809, 2))">
+					<If Condition="(not IsTaskComplete(0xE000E14F725E1809, 2, 0))">
+						<UseObject QuestId="0xE000E14F725E1809" BranchId="1" StepId="2" TaskId="0" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
+								<Placeables>
+									<Placeable>Kolto Container</Placeable>
+								</Placeables>
+								<Hotspots>
+									<Hotspot Name="Kolto Container" XYZ="-30.11353,8.801001,-1.348612" />
+									<Hotspot Name="Kolto Container" XYZ="-27.77319,8.801001,-1.294912" />
+									<Hotspot Name="Kolto Container" XYZ="-25.16033,8.80088,-1.471976" />
+									<Hotspot Name="Kolto Container" XYZ="-25.11174,8.801001,0.3159655" />
+									<Hotspot Name="Kolto Container" XYZ="-24.82331,8.801001,2.723577" />
+									<Hotspot Name="Kolto Container" XYZ="-28.4704,8.801001,2.678186" />
+									<Hotspot Name="Kolto Container" XYZ="-29.90627,8.801,1.926747" />
+								</Hotspots>
+							</UseObject>
+					</If>
+					<If Condition="(not IsTaskComplete(0xE000E14F725E1809, 2, 1))">
+						<UseObject QuestId="0xE000E14F725E1809" BranchId="1" StepId="2" TaskId="1" Radius="50" UseRange="5" WaitTime="5" IgnoreLOS="True" >
+								<Placeables>
+									<Placeable>Biotoxin Container</Placeable>
+								</Placeables>
+								<Hotspots>
+									<Hotspot Name="Biotoxin Container" XYZ="-28.28257,6.801007,-0.7643312" />
+									<Hotspot Name="Biotoxin Container" XYZ="-28.40003,6.801007,3.202631" />
+									<Hotspot Name="Biotoxin Container" XYZ="-31.56866,6.801,-1.611025" />				
+									<Hotspot Name="Biotoxin Container" XYZ="-33.80863,6.301,4.198784" />
+									<Hotspot Name="Biotoxin Container" XYZ="-31.50118,6.801,-5.757345" />
+									<Hotspot Name="Biotoxin Container" XYZ="-28.51702,6.801007,-4.172438" />
+									<Hotspot Name="Biotoxin Container" XYZ="-28.97196,6.801,7.155129" />				
+								</Hotspots>
+							</UseObject>
+					</If>
+				</If>
+			</If>		
+		
+				
+			<!-- [DAILY] Anti-Toxin Recovery -->
+			<If Condition="((HasQuest(0xE00009A5ADED8A3C)) and (not IsQuestComplete(0xE00009A5ADED8A3C)) )">
+				<!-- Elevator to Freight Depot (as in your recordings) -->
+				<If Condition="(Me.Position.X &lt; -36.88) and (Me.Position.Y &gt; 7) and (not IsStepComplete(0xE00009A5ADED8A3C, 2))">
+					<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Freight Depot" XYZ="-38.338,7.951,1.764" />
+				</If>
+				<If Condition="((HasQuest(0xE0006E78C9AB3836)) and (not IsQuestComplete(0xE0006E78C9AB3836)))">
+					<Grind GrindRef="Off Message" While="(not IsQuestComplete(0xE0006E78C9AB3836))"/>
+				</If>
+
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 2))">
+					<!-- Elevator down to Waste Disposal (as in your recordings) -->
+					<If Condition="(Me.Position.Y &gt; 3.9)">
+						<UseTransport TransporterName="Elevator" Type="Wonkavator" Option="Waste Disposal" XYZ="-23.364,6.47,9.985" />
+					</If>
+					<MoveTo QuestId="0xE00009A5ADED8A3C" StepId="2" XYZ="-25.56367,1.51103,5.01199" />   
+				</If>	
+			
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 3))">
+					<MoveTo QuestId="0xE00009A5ADED8A3C" StepId="3" XYZ="-28.15293,1.366044,1.610306" />
+					<UseObject QuestId="0xE00009A5ADED8A3C" ObjectName="Pipes" BranchId="1" StepId="3" IgnoreLOS="True" IgnoreQuestRelation="True" Radius="50" UseRange="50" WaitTime="5" XYZ="-28.34567,3.45,1.052138" /> 
+				</If>	
+			
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 4))">
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-30.98007,1.358648,2.834285" />
+					<UseObject QuestId="0xE00009A5ADED8A3C" ObjectName="Power Junction Box" BranchId="1" StepId="4" Radius="20" WaitTime="5" XYZ="-30.98007,1.358648,2.834285" />
+				</If>	
+			
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 5))">
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-25.13031,1.426604,0.4213598" />
+					<UseObject QuestId="0xE00009A5ADED8A3C" ObjectName="Pipe System Controls" BranchId="1" StepId="5" Radius="1" UseRange="7" IgnoreLOS="True" IgnoreQuestRelation="True" WaitTime="5" XYZ="-24.8007,1.8813,0.3097" />
+				</If>	
+			
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 6))">
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-25.22237,1.300737,1.489628" />
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-18.95885,1.480305,2.371511" />
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-16.91866,1.318459,3.549692" />
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-16.01623,1.335254,1.179256" />
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-18.26612,1.524709,2.128933" />
+					<UseObject QuestId="0xE00009A5ADED8A3C" ObjectName="Czerka Anti-Toxin" BranchId="1" StepId="6" Radius="20" WaitTime="5" XYZ="-18.26612,1.524709,2.128933" />
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 7))">
+					<Grind GrindRef="Project DS-5" While="(not IsStepComplete(0xE00009A5ADED8A3C, 7))"/>
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 8))">
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-18.26612,1.524709,2.128933" />
+					<UseObject QuestId="0xE00009A5ADED8A3C" ObjectName="Czerka Anti-Toxin" BranchId="1" StepId="8" Radius="20" WaitTime="5" XYZ="-18.26612,1.524709,2.128933" />
+				</If>
+			
+				<If Condition="(not IsStepComplete(0xE00009A5ADED8A3C, 9))">
+					<MoveTo QuestId="0xE00009A5ADED8A3C" XYZ="-28.15974,6.310806,9.812424" />
+				</If>
+			</If>	
+		
+
+			<!-- [DAILY] Workforce Reduction -->
+			<If Condition="((HasQuest(0xE0009D1B108AE7B4)) and (not IsQuestComplete(0xE0009D1B108AE7B4)) )">
+				<If Condition="(not IsStepComplete(0xE0009D1B108AE7B4, 2))">
+					<Grind GrindRef="Workforce Reduction" While="(not IsStepComplete(0xE0009D1B108AE7B4, 2))"/>
+				</If>	
+			</If>
+		
+		
+			<!-- Going to complete Dailies -->
+			<If Condition="((HasQuest(0xE0009D1B108AE7B4)) and (IsStepComplete(0xE0009D1B108AE7B4, 2)) and (HasQuest(0xE00009A5ADED8A3C)) and (IsStepComplete(0xE00009A5ADED8A3C, 8)) and (HasQuest(0xE000E14F725E1809)) and (IsStepComplete(0xE000E14F725E1809, 2)) and (HasQuest(0xE0006A54B7D0F1C2)) and (IsStepComplete(0xE0006A54B7D0F1C2, 2)))">	
+				<MoveTo QuestId="0xE0009D1B108AE7B4" XYZ="-55.38471,8.803679,0.3304866"  />
+				<UseObject QuestId="0xE0009D1B108AE7B4" ObjectName="Mission Dropbox" BranchId="1" StepId="3" WaitTime="4" UseRange="4" IgnoreLOS="True" XYZ="-55.38471,8.803679,0.3304866"  />	
+				<CompleteQuest QuestName="[DAILY] Give And Take" QuestId="0xE000E14F725E1809"/>	
+				<CompleteQuest QuestName="[DAILY] Workforce Reduction" QuestId="0xE0009D1B108AE7B4"/>	
+				<CompleteQuest QuestName="[DAILY] Manual Shutdown" QuestId="0xE0006A54B7D0F1C2"/>	
+				<CompleteQuest QuestName="[DAILY] Anti-Toxin Recovery" QuestId="0xE00009A5ADED8A3C"/> 			
+				<CompleteQuest QuestName="[HEROIC 2+] Off Message" QuestId="0xE0006E78C9AB3836"/> 			
+				<CompleteQuest QuestName="[WEEKLY] Czerka Takeover" QuestId="0xE000353261D88E47"/> 			
+			</If>
+		</If>
+
+		<UserDialog Title="Done!" Message="I'm Done!" />
+
+	</Questing>
+</Profile>
